@@ -4,7 +4,7 @@
 
 1. Intall packages in requirements.txt file into your virtual environment.
 
-2. Download chromedriver from [here](https://chromedriver.chromium.org/downloads)
+2. Download chromedriver [here](https://chromedriver.chromium.org/downloads)
 and save it in your Program Files (x86) folder.  You could save it somewhere
 else but you would have to change the file path in the scrape module and this
 is the recommended location.

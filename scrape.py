@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time, sqlite3
+from datetime import timedelta
 
 from utils import get_fridays, get_weekdays
 
@@ -27,14 +28,29 @@ class ScrapeChain:
         URL_3 = '/historical/'
 
         fri_list = get_fridays(start=self.start, end=self.end)
-        wkday_list = get_weekdays(start=self.start, end=self.end)
+        weekday_list = get_weekdays(start=self.start, end=self.end)
 
         for expiry in fri_list:
-            empty_ct = 0
-            # driver.get(URL_1+)
-            elem = driver.find_elements(By.TAG_NAME, 'td')
-            for i in elem:
-                print(i.text)
+            driver.get(f"{URL_1}+{expiry.strftime('%Y/%m/%d')}")
+            # td_list allows for timedelta values that correspond to Thursday, Wednesday,
+            # Monday, and Tuesday surrounding the typical Friday expiry
+            search_ct, td_list = 0, [-1, -1, 5, 1]
+            while driver.title == 'Page Not Found' and search_ct < 5:
+                expiry += timedelta(days=td_list[search_ct])
+                driver.get(f"{URL_1}+{expiry.strftime('%Y/%m/%d')}")
+                search_ct += 1
+
+            if driver.title == 'Page Not Found':
+                raise ValueError('The URL for an expiry was not found.')
+
+            if expiry.weekday() != 4:
+                print(expiry)
+
+            # empty_ct = 0
+            # # driver.get(URL_1+)
+            # elem = driver.find_elements(By.TAG_NAME, 'td')
+            # for i in elem:
+            #     print(i.text)
 
         driver.quit()
 

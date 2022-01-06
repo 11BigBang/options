@@ -13,10 +13,11 @@ class ScrapeChain:
     Arguments
     - ex_start: The start date for the expiry dates to scrape.
     - ex_end: The end date for the expiry dates to scrape.
+    - day_start: The start date for the "data from" to scrape.
+    - day_end: The end date for the "data from" to scrape.
     """
     def __init__(self, ex_start, ex_end, day_start, day_end):
         conn = sqlite3.connect('options.db')
-
         c = conn.cursor()
 
         options = Options()
@@ -57,30 +58,38 @@ class ScrapeChain:
 
             for weekday in weekday_list:
                 driver.get(f"{URL_1}{expiry.strftime('%Y/%m/%d')}{URL_3}{weekday.strftime('%Y/%m/%d')}")
-                if driver.title != 'Page Not Found':
+                if driver.title != 'Page Not Found' and weekday < expiry:
                     data = driver.find_elements(By.TAG_NAME, 'td')
                     ct = 0
                     for datum in data:
-                        row.append(datum.text)
-                        if ct % 14 == 0:
+                        #TODO: split the bid/size and ask/size and modify below
+                        if ct in [2, 3, 4, 6, 10, 11, 12, 13, 14, 15]:
+                            row.append(float(datum.text))
+                        elif ct in [5, 7, 8, 9]:
+                            row.append(int(datum.text))
+                        elif ct in [0, 1]:
+                            row.append(datum.text)
+                        ct += 1
+                        if len(row) == 16:
+                            # The following 2 lines of code convert the weekday and expiry to Unix so it can be
+                            # stored in the SQLite database as an integer.
+                            # It is important to remember this is 16 not because we have added date and expiry
+                            # but because we are splitting bid/size and ask/size into 2 columns each.
+                            row.insert(0, time.mktime(weekday.timetuple()))
+                            row.insert(0, time.mktime(expiry.timetuple()))
                             c.execute(
-                                #TODO: change below to insert into table and modify creation.py to reflect
-                                "INSERT INTO NYSE_Threshold_Securities "
-                                "(Symbol, Security_Name, Trade_Date, Market)"
-                                " VALUES(%s,%s,%s,%s)",
+                                """INSERT INTO gme
+                                (expiry, date, symbol, type, strike, last, bid, b_size,
+                                ask, a_size, volume, OI, IV, delta, theta, gamma, vega, rho)
+                                VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
                                 row)
                             row = []
 
-                        ct += 1
-
         driver.quit()
 
-        # use friday list as starting point.  if nothing is found then adjust the days until finds expiration then
-        # continue and try every weekday for open days
+        conn.commit()
 
-        # conn.commit()
-
-        # conn.close()
+        conn.close()
 
         # datatypes: NULL, INTEGER, REAL, TEXT, BLOB
 

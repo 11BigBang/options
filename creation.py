@@ -12,6 +12,7 @@ c = conn.cursor()
 # Creating tables in SQLite are a bit different since it is made as simple as possible.
 # The only data types available are NULL, INTEGER, REAL, TEXT, BLOB
 c.execute("""CREATE TABLE gme (
+            expiry integer
             date integer,
             symbol text,
             type text,

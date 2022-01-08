@@ -53,23 +53,34 @@ class ScrapeChain:
             if driver.title == 'Page Not Found':
                 raise ValueError('The URL for an expiry was not found.')
 
-            if expiry.weekday() != 4:
-                print(expiry)
-
             for weekday in weekday_list:
                 driver.get(f"{URL_1}{expiry.strftime('%Y/%m/%d')}{URL_3}{weekday.strftime('%Y/%m/%d')}")
                 if driver.title != 'Page Not Found' and weekday < expiry:
                     data = driver.find_elements(By.TAG_NAME, 'td')
                     ct = 0
                     for datum in data:
-                        #TODO: split the bid/size and ask/size and modify below
-                        if ct in [2, 3, 4, 6, 10, 11, 12, 13, 14, 15]:
-                            row.append(float(datum.text))
-                        elif ct in [5, 7, 8, 9]:
-                            row.append(int(datum.text))
-                        elif ct in [0, 1]:
+                        if ct in [0, 1]:
                             row.append(datum.text)
+                        elif ct in [2, 11, 12, 13, 14, 15]:
+                            row.append(float(datum.text))
+                        elif ct == 3:
+                            last = float(datum.text.replace('$', ''))
+                            row.append(last)
+                        elif ct in [4, 6]:
+                            mod = datum.text.replace('$', '')
+                            b_a = float(mod.split(' / ')[0])
+                            size = float(mod.split(' / ')[1])
+                            row.append(b_a)
+                            row.append(size)
+                            ct += 1 # Additional count since it's split into 2 datapoints
+                        elif ct in [8, 9]:
+                            vol_IO = int(datum.text.replace(',', ''))
+                            row.append(vol_IO)
+                        elif ct == 10:
+                            iv = float(datum.text.replace('%', ''))
+                            row.append(iv)
                         ct += 1
+
                         if len(row) == 16:
                             # The following 2 lines of code convert the weekday and expiry to Unix so it can be
                             # stored in the SQLite database as an integer.
@@ -81,7 +92,7 @@ class ScrapeChain:
                                 """INSERT INTO gme
                                 (expiry, date, symbol, type, strike, last, bid, b_size,
                                 ask, a_size, volume, OI, IV, delta, theta, gamma, vega, rho)
-                                VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
+                                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                                 row)
                             row = []
 

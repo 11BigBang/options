@@ -7,7 +7,8 @@
 2. Download chromedriver [here](https://chromedriver.chromium.org/downloads)
 and save it in your Program Files (x86) folder.  You could save it somewhere
 else but you would have to change the file path in the scrape module and this
-is the recommended location.
+is the recommended location.  You must also make sure that the chromedriver and 
+   your Chrome browser versions match.
 
 3. Download DB Browser for SQLite [here](https://sqlitebrowser.org/dl/). This 
 will help you easily view your database or make minor changes without

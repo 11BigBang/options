@@ -59,25 +59,34 @@ class ScrapeChain:
                     data = driver.find_elements(By.TAG_NAME, 'td')
                     ct = 0
                     for datum in data:
+                        if datum.text == '':
+                            row.append(None)
+                            if ct in [4, 6]:
+                                row.append(None)
+                                ct += 1
+                            ct += 1
+                            continue
+                        mod_1 = datum.text.replace(',', '')
                         if ct in [0, 1]:
-                            row.append(datum.text)
+                            row.append(mod_1)
                         elif ct in [2, 11, 12, 13, 14, 15]:
-                            row.append(float(datum.text))
+                            row.append(float(mod_1))
                         elif ct == 3:
-                            last = float(datum.text.replace('$', ''))
+                            last = float(mod_1.replace('$', ''))
                             row.append(last)
                         elif ct in [4, 6]:
-                            mod = datum.text.replace('$', '')
-                            b_a = float(mod.split(' / ')[0])
-                            size = float(mod.split(' / ')[1])
+                            basize1 = mod_1.replace('$', '')
+                            basize2 = basize1.replace(' ','')
+                            b_a = float(basize2.split('/')[0])
+                            size = float(basize2.split('/')[1])
                             row.append(b_a)
                             row.append(size)
                             ct += 1 # Additional count since it's split into 2 datapoints
                         elif ct in [8, 9]:
-                            vol_IO = int(datum.text.replace(',', ''))
+                            vol_IO = int(mod_1)
                             row.append(vol_IO)
                         elif ct == 10:
-                            iv = float(datum.text.replace('%', ''))
+                            iv = float(mod_1.replace('%', ''))
                             row.append(iv)
                         ct += 1
 
@@ -94,13 +103,11 @@ class ScrapeChain:
                                 ask, a_size, volume, OI, IV, delta, theta, gamma, vega, rho)
                                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                                 row)
+                            conn.commit()
                             row = []
+                            ct = 0
 
         driver.quit()
 
-        conn.commit()
-
         conn.close()
-
-        # datatypes: NULL, INTEGER, REAL, TEXT, BLOB
 

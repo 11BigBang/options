@@ -18,7 +18,7 @@ def get_fridays(start=date(date.today().year, 1, 1), end=date.today()):
     fri_list = []
     temp = start + timedelta(days = (4 - start.weekday() + 7) % 7)
 
-    while temp < end:
+    while temp <= end:
         fri_list.append(temp)
         temp += timedelta(days=7)
 
@@ -38,10 +38,3 @@ def get_weekdays(start=date(date.today().year, 1, 1), end=date.today()):
         temp += timedelta(days=1)
 
     return weekday_list
-
-# w = get_weekdays(start='2021-08-01', end='2021-08-12')
-# for i in w:
-#     print(i)
-
-# get_fridays(start='2021-02-13', end='2021-08-12')
-# get_fridays()

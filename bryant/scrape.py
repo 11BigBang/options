@@ -17,7 +17,7 @@ class ScrapeChain:
     - day_end: The end date for the "data from" to scrape.
     """
     def __init__(self, ex_start, ex_end, day_start, day_end):
-        conn = sqlite3.connect('options.db')
+        conn = sqlite3.connect('../options.db')
         c = conn.cursor()
 
         options = Options()

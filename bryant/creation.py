@@ -5,14 +5,14 @@ any tables listed below.
 """
 import sqlite3
 
-conn = sqlite3.connect('options.db')
+conn = sqlite3.connect('../options.db')
 
 c = conn.cursor()
 
 # Creating tables in SQLite are a bit different since it is made as simple as possible.
 # The only data types available are NULL, INTEGER, REAL, TEXT, BLOB
 c.execute("""CREATE TABLE gme (
-            expiry integer
+            expiry integer,
             date integer,
             symbol text,
             type text,

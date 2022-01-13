@@ -1,8 +1,5 @@
 from scrape import ScrapeChain
 
-scrape = ScrapeChain(
-                    ex_start='2021-08-13',
-                    ex_end='2021-08-13',
-                    day_start='2021-07-27',
-                    day_end='2021-07-28'
-                    )
+scrape = ScrapeChain(start='2021-07-27', end='2021-07-27')
+scrape.driver.quit()
+scrape.conn.close()

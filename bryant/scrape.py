@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time, sqlite3
-from datetime import timedelta
+from datetime import timedelta, date
 
 from utils import get_fridays, get_weekdays
 
@@ -16,7 +16,7 @@ class ScrapeChain:
     - day_start: The start date for the "data from" to scrape.
     - day_end: The end date for the "data from" to scrape.
     """
-    def __init__(self, ex_start, ex_end, day_start, day_end):
+    def __init__(self, start, end):
         self.conn = sqlite3.connect('../options.db')
         self.c = self.conn.cursor()
 
@@ -27,43 +27,71 @@ class ScrapeChain:
         self.driver = webdriver.Chrome(service=service, options=options)
         time.sleep(5)
 
-        self.ex_start = ex_start
-        self.ex_end = ex_end
-        self.day_start = day_start
-        self.day_end = day_end
+        self.start = start
+        self.end = end
 
         # example URL 'https://omnieq.com/underlyings/NYSE/GME/chain/2019/03/22/historical/2019/03/22'
         self.URL_1 = 'https://omnieq.com/underlyings/NYSE/GME/chain/'
         self.URL_3 = '/historical/'
 
-        fri_list = get_fridays(start=self.ex_start, end=self.ex_end)
-        weekday_list = get_weekdays(start=self.day_start, end=self.day_end)
+        # fri_list = get_fridays(start=self.ex_start, end=self.ex_end)
+        # weekday_list = get_weekdays(start=self.day_start, end=self.day_end)
+        #
+        # for expiry in fri_list:
+        #     self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
+        #     # td_list allows for timedelta values that correspond to Thursday, Wednesday,
+        #     # Monday, and Tuesday surrounding the typical Friday expiry
+        #     search_ct, td_list = 0, [-1, -1, 5, 1]
+        #     while self.driver.title == 'Page Not Found' and search_ct < 5:
+        #         expiry += timedelta(days=td_list[search_ct])
+        #         self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
+        #         search_ct += 1
+        #
+        #     if self.driver.title == 'Page Not Found':
+        #         raise ValueError('The URL for an expiry was not found.')
+        #
+        #     for weekday in weekday_list:
+        #         self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
+        #         if self.driver.title != 'Page Not Found' and weekday < expiry:
+        #             data = self.driver.find_elements(By.TAG_NAME, 'td')
+        #             self.clean_append(data, weekday, expiry)
 
-        for expiry in fri_list:
-            self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
-            # td_list allows for timedelta values that correspond to Thursday, Wednesday,
-            # Monday, and Tuesday surrounding the typical Friday expiry
-            search_ct, td_list = 0, [-1, -1, 5, 1]
-            while self.driver.title == 'Page Not Found' and search_ct < 5:
+        self.get_expiries()
+
+    def get_expiries(self):
+        dt_start = date.fromisoformat(self.start)
+        fri = dt_start + timedelta(days=(4 - dt_start.weekday() + 7) % 7) # Find first Friday
+        expiries, td_list = [], [-1, -1, 5, 1]
+        step = timedelta(weeks=1)
+
+        while fri < (date.today() + timedelta(weeks=170)):
+            expiry = fri
+            self.driver.get(f"{self.URL_1}{fri.strftime('%Y/%m/%d')}")
+
+            if fri - date.today() > timedelta(weeks=52):
+                td_list += [1, 1, 1, 3] # Allow for checking following week on yearlies
+
+            search_ct = 0
+            while self.driver.title == 'Page Not Found' and search_ct < len(td_list):
                 expiry += timedelta(days=td_list[search_ct])
                 self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
                 search_ct += 1
 
-            if self.driver.title == 'Page Not Found':
-                raise ValueError('The URL for an expiry was not found.')
+            if self.driver.title != 'Page Not Found':
+                expiries.append(expiry.strftime('%Y/%m/%d'))
 
-            for weekday in weekday_list:
-                self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
-                if self.driver.title != 'Page Not Found' and weekday < expiry:
-                    data = self.driver.find_elements(By.TAG_NAME, 'td')
-                    self.clean_append(data, weekday, expiry)
+            if step == timedelta(weeks=1) and (fri - date.today()) > timedelta(weeks=52) and self.driver.title != 'Page Not Found':
+                    step = timedelta(weeks=52)
 
-        self.driver.quit()
+            fri += step
 
-        self.conn.close()
+        for item in expiries:
+            print(item)
+        return expiries
+
 
     def clean_append(self, data, weekday, expiry):
-        """ Changes data to proper datatypes and forms into row to add to database.
+        """ Changes data to proper data types and forms into row to add to database.
 
         Takes each piece of data and changes it into proper SQLite3 datatype after taking out characters
         such as '%' and '$'. It also splits 'bid/size' and 'ask/size' columns into 2 pieces of data each.
@@ -107,6 +135,7 @@ class ScrapeChain:
                 # bid / size and ask / size into 2 columns each.
                 self.insert_data(row, weekday, expiry)
                 ct = 0
+                row = []
 
     def insert_data(self, row, weekday, expiry):
         """Inserts row into the database.
@@ -126,5 +155,4 @@ class ScrapeChain:
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             row)
         self.conn.commit()
-        row = []
 

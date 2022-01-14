@@ -32,7 +32,6 @@ c.execute("""CREATE TABLE gme (
             rho real
             )""")
 
-
 conn.commit()
 
 conn.close()

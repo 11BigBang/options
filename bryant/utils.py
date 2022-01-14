@@ -7,6 +7,8 @@ def get_weekdays(start=date(date.today().year, 1, 1), end=date.today()):
         start = date.fromisoformat(start)
     if not isinstance(end, date):
         end = date.fromisoformat(end)
+    if start > end:
+        raise ValueError('Your end date must be later that start date.')
 
     weekday_list = []
     temp = start

@@ -38,15 +38,24 @@ class ScrapeChain:
         self.weekdays = get_weekdays(start=self.start, end=self.end)
 
         for weekday in self.weekdays:
+            print(f"Scraping data for {weekday}...")
+            empties, count = 0, 0
             for expiry in self.expiries:
                 if weekday > expiry:
                     break
                 self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
-                if self.driver.title != 'Page Not Found':
+                count += 1
+                if self.driver.title == 'Page Not Found':
+                    empties += 1
+                    if empties > 2 and count == empties : # Ensures we don't keep scraping on a holiday
+                        break
+                else:
                     data = self.driver.find_elements(By.TAG_NAME, 'td')
                     self.clean_append(data, weekday, expiry)
+            print("Done.")
 
     def get_expiries(self):
+        print("Getting expiries...")
         dt_start = date.fromisoformat(self.start)
         fri = dt_start + timedelta(days=(4 - dt_start.weekday() + 7) % 7) # Find first Friday
         expiries, td_list = [], [-1, -1, 5, 1] # td_list is for timedelta to Thur to Wedn to Mon to Tues
@@ -73,6 +82,7 @@ class ScrapeChain:
 
             fri += step
 
+        print("Done.")
         return expiries
 
 

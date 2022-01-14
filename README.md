@@ -4,7 +4,7 @@
 The current program is fully functional for scraping options chains. 
 It takes approximately 25 minutes per day.
 #### Dates Scraped
-12/1/2020 - 12/7/2020  
+12/1/2020 - 12/9/2020  
 
 *Note:  07/27/2021 was also scraped as a test and is currently in the database.*
 

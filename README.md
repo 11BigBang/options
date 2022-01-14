@@ -1,10 +1,15 @@
 ## OPTIONS
 
+### Table of Contents
+[Current Status](#Current Status)  
+[Setup](#Setup)  
+[QAQC](#QAQC)
+
 ### Current Status
 The current program is fully functional for scraping options chains. 
 It takes approximately 25 minutes per day.
 #### Dates Scraped
-12/1/2020 - 12/9/2020  
+12/01/2020 - 12/11/2020  
 
 *Note:  07/27/2021 was also scraped as a test and is currently in the database.*
 
@@ -23,3 +28,12 @@ will help you easily view your database or make minor changes without
 having to write a bunch of SQL statements.
 
 4. Run creation.py file to initialize database and tables.
+
+### QAQC
+If you would like to ensure all dates between a range have been scraped,
+run the 'qaqc.py' module after entering start and end dates into the function
+at the bottom.  
+
+*IMPORTANT:  This module just checks to make sure a single row is in the 
+database for that date.  It doesn't necessarily mean that it took in all of
+the data from that date.*

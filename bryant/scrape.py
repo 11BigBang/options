@@ -34,8 +34,8 @@ class ScrapeChain:
         self.URL_1 = 'https://omnieq.com/underlyings/NYSE/GME/chain/'
         self.URL_3 = '/historical/'
 
-        self.expiries = self.get_expiries()
         self.weekdays = get_weekdays(start=self.start, end=self.end)
+        self.expiries = self.get_expiries()
 
         for weekday in self.weekdays:
             print(f"Scraping data for {weekday}...")

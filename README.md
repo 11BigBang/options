@@ -1,7 +1,7 @@
 ## OPTIONS
 
 ### Table of Contents
-[Current Status](#Current Status)  
+[Current Status](#Current)  
 [Setup](#Setup)  
 [QAQC](#QAQC)
 

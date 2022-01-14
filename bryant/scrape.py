@@ -3,9 +3,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time, sqlite3
-from datetime import timedelta, date
+from datetime import timedelta, date, datetime
 
-from utils import get_fridays, get_weekdays
+from utils import get_weekdays
 
 class ScrapeChain:
     """Scrapes options chains.
@@ -34,34 +34,22 @@ class ScrapeChain:
         self.URL_1 = 'https://omnieq.com/underlyings/NYSE/GME/chain/'
         self.URL_3 = '/historical/'
 
-        # fri_list = get_fridays(start=self.ex_start, end=self.ex_end)
-        # weekday_list = get_weekdays(start=self.day_start, end=self.day_end)
-        #
-        # for expiry in fri_list:
-        #     self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
-        #     # td_list allows for timedelta values that correspond to Thursday, Wednesday,
-        #     # Monday, and Tuesday surrounding the typical Friday expiry
-        #     search_ct, td_list = 0, [-1, -1, 5, 1]
-        #     while self.driver.title == 'Page Not Found' and search_ct < 5:
-        #         expiry += timedelta(days=td_list[search_ct])
-        #         self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
-        #         search_ct += 1
-        #
-        #     if self.driver.title == 'Page Not Found':
-        #         raise ValueError('The URL for an expiry was not found.')
-        #
-        #     for weekday in weekday_list:
-        #         self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
-        #         if self.driver.title != 'Page Not Found' and weekday < expiry:
-        #             data = self.driver.find_elements(By.TAG_NAME, 'td')
-        #             self.clean_append(data, weekday, expiry)
+        self.expiries = self.get_expiries()
+        self.weekdays = get_weekdays(start=self.start, end=self.end)
 
-        self.get_expiries()
+        for weekday in self.weekdays:
+            for expiry in self.expiries:
+                if weekday > expiry:
+                    break
+                self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
+                if self.driver.title != 'Page Not Found':
+                    data = self.driver.find_elements(By.TAG_NAME, 'td')
+                    self.clean_append(data, weekday, expiry)
 
     def get_expiries(self):
         dt_start = date.fromisoformat(self.start)
         fri = dt_start + timedelta(days=(4 - dt_start.weekday() + 7) % 7) # Find first Friday
-        expiries, td_list = [], [-1, -1, 5, 1]
+        expiries, td_list = [], [-1, -1, 5, 1] # td_list is for timedelta to Thur to Wedn to Mon to Tues
         step = timedelta(weeks=1)
 
         while fri < (date.today() + timedelta(weeks=170)):
@@ -78,15 +66,13 @@ class ScrapeChain:
                 search_ct += 1
 
             if self.driver.title != 'Page Not Found':
-                expiries.append(expiry.strftime('%Y/%m/%d'))
+                expiries.append(expiry)
 
             if step == timedelta(weeks=1) and (fri - date.today()) > timedelta(weeks=52) and self.driver.title != 'Page Not Found':
                     step = timedelta(weeks=52)
 
             fri += step
 
-        for item in expiries:
-            print(item)
         return expiries
 
 

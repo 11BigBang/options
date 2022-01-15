@@ -30,4 +30,4 @@ def check_dates(start, end):
         if weekday not in dates_scraped:
             print(weekday)
 
-check_dates(start='2020-12-01', end='2021-01-01')
+check_dates(start='2020-12-01', end='2021-01-15')

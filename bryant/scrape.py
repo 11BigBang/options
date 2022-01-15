@@ -42,7 +42,7 @@ class ScrapeChain:
             empties, count = 0, 0
             for expiry in self.expiries:
                 if weekday > expiry:
-                    break
+                    continue
                 self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}{self.URL_3}{weekday.strftime('%Y/%m/%d')}")
                 count += 1
                 if self.driver.title == 'Page Not Found':

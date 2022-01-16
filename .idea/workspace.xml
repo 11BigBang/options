@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b1b28d-bbd7-4eb1-b4aa-c8bf1fc428ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/options.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +37,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../baseball/scrape.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tyler" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="creation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options\tyler" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options\bryant" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="creation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,11 +57,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bryant" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/creation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bryant/creation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -66,7 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,11 +78,74 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bryant" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bryant/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="qaqc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bryant" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bryant/qaqc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="query" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tyler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tyler/query.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tyler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tyler/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,28 +166,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\wbmar\OneDrive\Documents\python_projects\options\scrape.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\wbmar\OneDrive\Documents\python_projects\options\bryant\scrape.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,9 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.creation" />
-        <item itemvalue="Python.utils" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.creation (1)" />
+        <item itemvalue="Python.qaqc" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.query" />
       </list>
     </recent_temporary>
   </component>
@@ -145,132 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640923751494</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Added creation of db and tables">
-      <created>1640958514821</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958514821</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added readme with setup instructions">
-      <created>1640958544321</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958544321</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added requirements">
-      <created>1640958568615</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958568615</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Started the settings for the scrape.">
-      <created>1640958603522</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958603522</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial creation">
-      <created>1640958815655</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958815655</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Reformat">
-      <created>1640958831170</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1640958831170</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Created main.py">
-      <created>1641083594733</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083594733</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added instructions">
-      <created>1641083612294</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083612294</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Corrected requirements">
-      <created>1641083627073</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083627073</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Began creation of pulling properly dated URLs">
-      <created>1641083662855</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083662855</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Begain get weekday function">
-      <created>1641083788909</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083788909</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Changes">
-      <created>1641083859955</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641083859955</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Modified calendar functions">
-      <created>1641391448460</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1641391448461</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Expiry URL search completed">
-      <created>1641391498663</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1641391498663</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Added more dates as arguments">
-      <created>1641442608825</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1641442608826</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Added daily part of URL and prepared for db insertion">
-      <created>1641442673200</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1641442673200</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Reformat">
-      <created>1641479442462</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1641479442463</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Reformat">
-      <created>1641479460630</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1641479460630</updated>
     </task>
     <task id="LOCAL-00019" summary="Further work on inserting scrape into db">
       <created>1641479559411</created>
@@ -300,7 +222,322 @@
       <option name="project" value="LOCAL" />
       <updated>1641658542729</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Scrape working properly">
+      <created>1641743936202</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1641743936203</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed">
+      <created>1641743980780</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1641743980780</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Created new directory for Tyler">
+      <created>1641791017687</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1641791017692</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Included database in github">
+      <created>1641791054435</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1641791054435</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Moved everything into Bryant folder and fixed minor deficiencies">
+      <created>1641791087612</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1641791087612</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Created module for plotting">
+      <created>1642001389264</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1642001389267</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Finished get_data function">
+      <created>1642001587563</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1642001587563</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Started CLI">
+      <created>1642001637805</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1642001637805</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Restructured by segmenting into methods">
+      <created>1642050897145</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1642050897145</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Minor changes">
+      <created>1642050909833</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1642050909833</updated>
+    </task>
+    <task id="LOCAL-00033" summary="No changes">
+      <created>1642101817582</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1642101817583</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added closing of driver and db connection">
+      <created>1642101845960</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1642101845960</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added get_expiries function">
+      <created>1642101868829</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1642101868829</updated>
+    </task>
+    <task id="LOCAL-00036" summary="No change">
+      <created>1642132373334</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1642132373337</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Temporarily added run time">
+      <created>1642132416196</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1642132416196</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Test data added 7/27/2021">
+      <created>1642132453005</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1642132453005</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Deleted get_fridays function">
+      <created>1642132486596</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1642132486597</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Reworked the scrape with new approach">
+      <created>1642132525319</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1642132525319</updated>
+    </task>
+    <task id="LOCAL-00041" summary="New dates for scrape">
+      <created>1642169253437</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169253437</updated>
+    </task>
+    <task id="LOCAL-00042" summary="12/1/2020 - 12/4/2020 scrape">
+      <created>1642169307514</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169307514</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added current status">
+      <created>1642169325077</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169325077</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added check to ensure we weren't scraping on a holiday">
+      <created>1642169345888</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169345888</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Reformat">
+      <created>1642169813701</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169813701</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Reformat">
+      <created>1642169906144</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1642169906144</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Scraped 12/7/2020">
+      <created>1642171640046</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1642171640046</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Scraped 12/8/2020-12/9/2020">
+      <created>1642173778082</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1642173778082</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Scraped 12/10/2020-12/11/2020">
+      <created>1642181537044</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1642181537044</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Added QAQC for ensuring dates scraped">
+      <created>1642181562023</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1642181562025</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Reformat">
+      <created>1642181770159</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1642181770159</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Reformat">
+      <created>1642181938526</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642181938526</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Scrape start='2020-12-14', end='2020-12-18'">
+      <created>1642188108738</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642188108739</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Scrape start='2020-12-21', end='2020-12-25'">
+      <created>1642192166364</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192166365</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Checked Christmas scrape">
+      <created>1642192191449</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192191450</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Scrape start='2020-12-28', end='2021-01-01'">
+      <created>1642204145457</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1642204145458</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Checked scrape">
+      <created>1642204170183</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1642204170183</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Reordered weekday and expiry functions">
+      <created>1642204204648</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642204204648</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Added check to ensure end is after start">
+      <created>1642204224936</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1642204224938</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Scrape start='2021-01-04', end='2021-01-08'">
+      <created>1642210686016</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642210686017</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Fixed a break that was resulting in ending after a Friday">
+      <created>1642210734235</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1642210734235</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Scrape start='2021-01-11', end='2021-01-15'">
+      <created>1642218444319</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1642218444319</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Checked dates">
+      <created>1642218457687</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1642218457687</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Scrape start='2021-01-18', end='2021-02-05'">
+      <created>1642253615615</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253615616</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Scrape start='2021-02-08', end='2021-02-12'">
+      <created>1642292443761</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1642292443764</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Scrape start='2021-02-15', end='2021-02-17'">
+      <created>1642301135435</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1642301135437</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Scrape start='2021-02-18', end='2021-02-19'">
+      <created>1642307747539</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1642307747542</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,26 +553,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added creation of db and tables" />
-    <MESSAGE value="Added readme with setup instructions" />
-    <MESSAGE value="Added requirements" />
-    <MESSAGE value="Started the settings for the scrape." />
-    <MESSAGE value="Initial creation" />
-    <MESSAGE value="Created main.py" />
-    <MESSAGE value="Added instructions" />
-    <MESSAGE value="Corrected requirements" />
-    <MESSAGE value="Began creation of pulling properly dated URLs" />
-    <MESSAGE value="Begain get weekday function" />
-    <MESSAGE value="Changes" />
-    <MESSAGE value="Modified calendar functions" />
-    <MESSAGE value="Expiry URL search completed" />
-    <MESSAGE value="Added more dates as arguments" />
-    <MESSAGE value="Added daily part of URL and prepared for db insertion" />
+    <MESSAGE value="Reworked the scrape with new approach" />
+    <MESSAGE value="New dates for scrape" />
+    <MESSAGE value="12/1/2020 - 12/4/2020 scrape" />
+    <MESSAGE value="Added current status" />
+    <MESSAGE value="Added check to ensure we weren't scraping on a holiday" />
+    <MESSAGE value="Scraped 12/7/2020" />
+    <MESSAGE value="Scraped 12/8/2020-12/9/2020" />
+    <MESSAGE value="Scraped 12/10/2020-12/11/2020" />
+    <MESSAGE value="Added QAQC for ensuring dates scraped" />
     <MESSAGE value="Reformat" />
-    <MESSAGE value="Further work on inserting scrape into db" />
-    <MESSAGE value="Changed parameters" />
-    <MESSAGE value="Corrected instructions" />
-    <MESSAGE value="Scrape now functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scrape now functional" />
+    <MESSAGE value="Scrape start='2020-12-14', end='2020-12-18'" />
+    <MESSAGE value="Scrape start='2020-12-21', end='2020-12-25'" />
+    <MESSAGE value="Checked Christmas scrape" />
+    <MESSAGE value="Scrape start='2020-12-28', end='2021-01-01'" />
+    <MESSAGE value="Checked scrape" />
+    <MESSAGE value="Reordered weekday and expiry functions" />
+    <MESSAGE value="Added check to ensure end is after start" />
+    <MESSAGE value="Scrape start='2021-01-04', end='2021-01-08'" />
+    <MESSAGE value="Fixed a break that was resulting in ending after a Friday" />
+    <MESSAGE value="Scrape start='2021-01-11', end='2021-01-15'" />
+    <MESSAGE value="Checked dates" />
+    <MESSAGE value="Scrape start='2021-01-18', end='2021-02-05'" />
+    <MESSAGE value="Scrape start='2021-02-08', end='2021-02-12'" />
+    <MESSAGE value="Scrape start='2021-02-15', end='2021-02-17'" />
+    <MESSAGE value="Scrape start='2021-02-18', end='2021-02-19'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scrape start='2021-02-18', end='2021-02-19'" />
   </component>
 </project>

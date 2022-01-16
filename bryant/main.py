@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 begin = dt.now()
 print(begin)
-scrape = ScrapeChain(start='2021-01-18', end='2021-02-05')
+scrape = ScrapeChain(start='2021-02-08', end='2021-02-12')
 scrape.driver.quit()
 scrape.conn.close()
 print(f'Finished {dt.now()}, Run time was {dt.now() - begin}')

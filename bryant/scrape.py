@@ -17,6 +17,8 @@ class ScrapeChain:
     - day_end: The end date for the "data from" to scrape.
     """
     def __init__(self, start, end):
+        self.begin = datetime.now()
+        print(self.begin)
         self.conn = sqlite3.connect('../options.db')
         self.c = self.conn.cursor()
 
@@ -53,6 +55,8 @@ class ScrapeChain:
                     data = self.driver.find_elements(By.TAG_NAME, 'td')
                     self.clean_append(data, weekday, expiry)
             print("Done.")
+
+        print(f'Finished {datetime.now()}, Run time was {datetime.now() - self.begin}')
 
     def get_expiries(self):
         print("Getting expiries...")

@@ -11,10 +11,10 @@ class ScrapeChain:
     """Scrapes options chains.
 
     Arguments
-    - ex_start: The start date for the expiry dates to scrape.
-    - ex_end: The end date for the expiry dates to scrape.
-    - day_start: The start date for the "data from" to scrape.
-    - day_end: The end date for the "data from" to scrape.
+    - start: The start date for the interval to scrape.
+    - end: The end date for the interval to scrape.
+
+    The scrape includes both start and end date.
     """
     def __init__(self, start, end):
         self.begin = datetime.now()
@@ -49,7 +49,8 @@ class ScrapeChain:
                 count += 1
                 if self.driver.title == 'Page Not Found':
                     empties += 1
-                    if empties > 2 and count == empties : # Ensures we don't keep scraping on a holiday
+                    if empties > 2 and count == empties :
+                        # Ensures we don't keep scraping on a holiday
                         break
                 else:
                     data = self.driver.find_elements(By.TAG_NAME, 'td')
@@ -62,18 +63,21 @@ class ScrapeChain:
         print("Getting expiries...")
         dt_start = date.fromisoformat(self.start)
         fri = dt_start + timedelta(days=(4 - dt_start.weekday() + 7) % 7) # Find first Friday
-        expiries, td_list = [], [-1, -1, 5, 1] # td_list is for timedelta to Thur to Wedn to Mon to Tues
+        expiries, td_list = [], [-1, -1, 5, 1] # td_list is for timedelta to Thu to Wed to Mon to Tue
         step = timedelta(weeks=1)
 
         while fri < (date.today() + timedelta(weeks=170)):
+            # Expiries only go out to a maximum of 39 months, so this ensures all expiries are covered
             expiry = fri
             self.driver.get(f"{self.URL_1}{fri.strftime('%Y/%m/%d')}")
 
             if fri - date.today() > timedelta(weeks=52):
-                td_list += [1, 1, 1, 3] # Allow for checking following week on yearlies
+                # Allow for checking following week on yearlies
+                td_list += [1, 1, 1, 3]
 
             search_ct = 0
             while self.driver.title == 'Page Not Found' and search_ct < len(td_list):
+                # Searches days around the expected Friday for the actual expiry
                 expiry += timedelta(days=td_list[search_ct])
                 self.driver.get(f"{self.URL_1}{expiry.strftime('%Y/%m/%d')}")
                 search_ct += 1
@@ -82,7 +86,9 @@ class ScrapeChain:
                 expiries.append(expiry)
 
             if step == timedelta(weeks=1) and (fri - date.today()) > timedelta(weeks=52) and self.driver.title != 'Page Not Found':
-                    step = timedelta(weeks=52)
+                # If an expiry has been found that is 1 year past today's date, it is guaranteed to be a yearly
+                # so we must start jumping ahead a year at a time.
+                step = timedelta(weeks=52)
 
             fri += step
 
@@ -103,18 +109,18 @@ class ScrapeChain:
                 row.append(None)
                 if ct in [4, 6]:
                     row.append(None)
-                    ct += 1
+                    ct += 1 # Data for 'bid/size' and 'ask/size' are split into 2 data points each so 'ct' must be iterated twice
                 ct += 1
                 continue
             mod_1 = datum.text.replace(',', '')
-            if ct in [0, 1]:
+            if ct in [0, 1]: # Symbol, Type
                 row.append(mod_1)
-            elif ct in [2, 11, 12, 13, 14, 15]:
+            elif ct in [2, 11, 12, 13, 14, 15]: # Strike, Delta, Theta, Gamma, Rho
                 row.append(float(mod_1))
-            elif ct == 3:
+            elif ct == 3: # Last
                 last = float(mod_1.replace('$', ''))
                 row.append(last)
-            elif ct in [4, 6]:
+            elif ct in [4, 6]: # Bid/Size, Ask/Size
                 basize1 = mod_1.replace('$', '')
                 basize2 = basize1.replace(' ', '')
                 b_a = float(basize2.split('/')[0])
@@ -122,16 +128,16 @@ class ScrapeChain:
                 row.append(b_a)
                 row.append(size)
                 ct += 1  # Additional count since it's split into 2 data points
-            elif ct in [8, 9]:
+            elif ct in [8, 9]: # Volume, OI (Open Interest)
                 vol_IO = int(mod_1)
                 row.append(vol_IO)
-            elif ct == 10:
+            elif ct == 10: # IV (Implied Volatility)
                 iv = float(mod_1.replace('%', ''))
                 row.append(iv)
             ct += 1
 
             if len(row) == 16:
-                # It is important to remember this is 16 not because we are splitting
+                # It is important to remember this is 16 because we are splitting
                 # bid / size and ask / size into 2 columns each.
                 self.insert_data(row, weekday, expiry)
                 ct = 0

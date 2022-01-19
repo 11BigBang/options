@@ -1,4 +1,5 @@
 from analyze.query import Query
+from scrape.scrape import ScrapeChain
 
 mm_sel = input("""
 
@@ -38,8 +39,17 @@ if mm_sel == '1':
 
 elif mm_sel == '3':
     start, end = query.suggest_dates()
-    print(start)
-    print(end)
+    print(f"""\nMay I suggest the following dates?\nStart: {start}\nEnd: {end}\n""")
+    sug = input("Would like to proceed with the following dates?(y/n)")
+
+    if sug == 'n':
+        start = input("What date to start?\nEx: 1986-07-27\n")
+        end = input('What date to end?\nEx: 1986-07-27\n')
+
+    if sug == 'n' or 'y':
+        scrape = ScrapeChain(start=start, end=end)
+        scrape.driver.quit()
+        scrape.conn.close()
 
 else:
     print('Thanks for playing')

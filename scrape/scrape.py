@@ -19,7 +19,7 @@ class ScrapeChain:
     def __init__(self, start, end):
         self.begin = datetime.now()
         print(self.begin)
-        self.conn = sqlite3.connect('../options.db')
+        self.conn = sqlite3.connect('C:/Users/wbmar/OneDrive/Documents/python_projects/options/options.db')
         self.c = self.conn.cursor()
 
         options = Options()

@@ -1,6 +1,4 @@
 from datetime import date, timedelta
-from datetime import datetime as dt
-
 
 def get_weekdays(start=date(date.today().year, 1, 1), end=date.today()):
     if not isinstance(start, date):

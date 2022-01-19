@@ -1,11 +1,11 @@
+import time, sqlite3
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-import time, sqlite3
 from datetime import timedelta, date, datetime
 
-from utils import get_weekdays
+from .utils import get_weekdays
 
 class ScrapeChain:
     """Scrapes options chains.

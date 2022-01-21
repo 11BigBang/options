@@ -4,7 +4,6 @@ from datetime import timedelta
 
 class Query:
     def __init__(self):
-        # self.conn = sqlite3.connect('../options.db')
         self.conn = sqlite3.connect('C:/Users/wbmar/OneDrive/Documents/python_projects/options/options.db')
         self.c = self.conn.cursor()
 

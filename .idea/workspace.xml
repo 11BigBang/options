@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b1b28d-bbd7-4eb1-b4aa-c8bf1fc428ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/qaqc.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/qaqc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/scrape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bryant/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tyler/ANALYSIS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tyler/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tyler/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tyler/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrape/qaqc.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/qaqc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +49,54 @@
       <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options\tyler" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options\cli" />
       <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options" />
       <recent name="C:\Users\wbmar\OneDrive\Documents\python_projects\options\bryant" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run (1)">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="cli" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\wbmar\OneDrive\Documents\python_projects\options\cli.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cli" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tyler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\wbmar\OneDrive\Documents\python_projects\options\cli\cli.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="creation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,11 +189,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tyler" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\wbmar\OneDrive\Documents\python_projects\options\run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.cli" />
+        <item itemvalue="Python.cli" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.creation (1)" />
-        <item itemvalue="Python.qaqc" />
       </list>
     </recent_temporary>
   </component>
@@ -205,34 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640923751494</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Started CLI">
-      <created>1642001637805</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1642001637805</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Restructured by segmenting into methods">
-      <created>1642050897145</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1642050897145</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Minor changes">
-      <created>1642050909833</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1642050909833</updated>
-    </task>
-    <task id="LOCAL-00033" summary="No changes">
-      <created>1642101817582</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1642101817583</updated>
     </task>
     <task id="LOCAL-00034" summary="Added closing of driver and db connection">
       <created>1642101845960</created>
@@ -549,7 +557,35 @@
       <option name="project" value="LOCAL" />
       <updated>1642430475793</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Restructure and began CLI">
+      <created>1642599871271</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1642599871273</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Adding onto scrape menu">
+      <created>1642604035010</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1642604035014</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Fixed import">
+      <created>1642604160036</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1642604160036</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Cleaned up">
+      <created>1642604173519</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1642604173519</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,10 +601,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Scrape start='2020-12-14', end='2020-12-18'" />
-    <MESSAGE value="Scrape start='2020-12-21', end='2020-12-25'" />
-    <MESSAGE value="Checked Christmas scrape" />
-    <MESSAGE value="Scrape start='2020-12-28', end='2021-01-01'" />
     <MESSAGE value="Checked scrape" />
     <MESSAGE value="Reordered weekday and expiry functions" />
     <MESSAGE value="Added check to ensure end is after start" />
@@ -590,6 +622,10 @@
     <MESSAGE value="Scrape start='2022-01-03', end='2022-01-07'" />
     <MESSAGE value="Scrape start='2022-01-10', end='2022-01-14'" />
     <MESSAGE value="Reformat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat" />
+    <MESSAGE value="Restructure and began CLI" />
+    <MESSAGE value="Adding onto scrape menu" />
+    <MESSAGE value="Fixed import" />
+    <MESSAGE value="Cleaned up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up" />
   </component>
 </project>

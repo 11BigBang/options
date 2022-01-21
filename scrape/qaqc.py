@@ -7,7 +7,7 @@ import sqlite3, time
 from datetime import datetime as dt
 from datetime import date
 
-from utils import get_weekdays
+from .utils import get_weekdays
 
 def check_dates(start, end):
     start = date.fromisoformat(start)
@@ -15,7 +15,7 @@ def check_dates(start, end):
     end = date.fromisoformat(end)
     unix_end = time.mktime(end.timetuple())
 
-    conn = sqlite3.connect('../options.db')
+    conn = sqlite3.connect('C:/Users/wbmar/OneDrive/Documents/python_projects/options/options.db')
     c = conn.cursor()
     dates = c.execute("""SELECT DISTINCT 
                             date 
@@ -31,8 +31,7 @@ def check_dates(start, end):
     conn.close()
 
     weekdays = get_weekdays(start=start, end=end)
+    print("The following days don't have a single entry in the database:\nNote:  They may only be listed due to market closures.")
     for weekday in weekdays:
         if weekday not in dates_scraped:
             print(weekday)
-
-check_dates(start='2020-12-01', end='2021-01-15')

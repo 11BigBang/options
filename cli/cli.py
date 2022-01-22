@@ -1,4 +1,5 @@
 import os, time
+from datetime import datetime as dt
 
 from analyze.query import Query
 from scrape.scrape import ScrapeChain
@@ -6,17 +7,17 @@ from scrape.qaqc import check_dates
 
 class CLI():
     def __init__(self):
+        self.show_start()
         while True:
             self.mm()
-            self.clear()
             self.continue_menu()
             self.clear()
 
     def clear(self):
         os.system('cls')
 
-    def mm(self):
-        mm_sel = input("""
+    def show_start(self):
+        print("""
         
   /$$$$$$              /$$     /$$                              
  /$$__  $$            | $$    |__/                              
@@ -28,7 +29,11 @@ class CLI():
  \______/ | $$____/    \___/  |__/ \______/ |__/  |__/|_______/ 
           | $$                                                  
           | $$                                                  
-          |__/    
+          |__/   
+""")
+
+    def mm(self):
+        mm_sel = input(""" 
           
 Main menu
 ------------
@@ -63,13 +68,13 @@ Please enter 1-3:
     def continue_menu(self):
         ans = ''
         while ans != 'm' or 'q':
-            ans = input("Would you like to return to the main menu or quit? (m/q)")
+            ans = input("\nWould you like to return to the main menu or quit? (m/q)")
             if ans == 'q':
                 quit()
             elif ans == 'm':
                 break
             else:
-                print("Please enter either 'm' for main menu or 'q' for quit.")
+                print("\nPlease enter either 'm' for main menu or 'q' for quit.")
 
     def go_analyze(self):
         ans = input('What metric would you like to search?')
@@ -93,14 +98,33 @@ Please enter 1-3:
             start, end = self.ask_dates()
 
         if sug == 'n' or 'y':
-            scrape = ScrapeChain(start=start, end=end)
-            scrape.driver.quit()
-            scrape.conn.close()
+            confirm = input(f"Are you sure you would like to scrape the following dates?\nStart: {start}\nEnd: {end} (y/n)")
+            if confirm == 'y':
+                scrape = ScrapeChain(start=start, end=end)
+                scrape.driver.quit()
+                scrape.conn.close()
 
     def ask_dates(self):
-        start = input("What date would you like to start?\nEx: 1986-07-27\n")
-        print("\n")
-        end = input('What date would you like to end?\nEx: 1986-07-27\n')
-        print("\n")
+        while True:
+            start = input("What date would you like to start?\nEx: 1986-07-27\n")
+            print("\n")
+            if self.is_valid_date(start):
+                break
+        while True:
+            end = input('What date would you like to end?\nEx: 1986-07-27\n')
+            print("\n")
+            if self.is_valid_date(end):
+                break
 
         return start, end
+
+    def is_valid_date(self, date_str):
+        format = "%Y-%m-%d"
+        valid = False
+        try:
+            dt.strptime(date_str, format)
+            valid = True
+        except ValueError:
+            print("ERROR!\nThis is the incorrect date string format. It should be YYYY-MM-DD.")
+
+        return valid

@@ -42,7 +42,7 @@ Main menu
 3. Scrape
 4. Quit
 
-Please enter 1-3:  
+Please enter 1-4:  
 """)
 
         self.query = Query()
@@ -77,13 +77,21 @@ Please enter 1-3:
                 print("\nPlease enter either 'm' for main menu or 'q' for quit.")
 
     def go_analyze(self):
-        ans = input('What metric would you like to search?')
-        if ans == 'bid':
-            start, end = self.ask_dates()
-
-            print(self.query.get_data(metric=ans, start=start, end=end))
-        elif ans == 'q':
-            quit()
+        while True:
+            metric_list = ['expiry', 'date', 'symbol', 'type', 'strike', 'last', 'bid', 'b_size', 'ask',
+                         'a_size', 'volume', 'OI', 'IV', 'delta', 'theta', 'gamma', 'vega', 'rho']
+            print("Metrics\n----------------")
+            for i in metric_list:
+                print(i)
+            ans = input('\nWhat metric would you like to search?\n')
+            if ans in metric_list:
+                start, end = self.ask_dates()
+                print(self.query.get_data(metric=ans, start=start, end=end))
+                break
+            else:
+                self.clear()
+                print(f"\nERROR\n{ans} is not a valid choice from the list of metrics.")
+                time.sleep(5)
 
     def go_qaqc(self):
         start, end = self.ask_dates()
@@ -106,13 +114,11 @@ Please enter 1-3:
 
     def ask_dates(self):
         while True:
-            start = input("What date would you like to start?\nEx: 1986-07-27\n")
-            print("\n")
+            start = input("\nWhat date would you like to start?\nEx: 1986-07-27\n")
             if self.is_valid_date(start):
                 break
         while True:
-            end = input('What date would you like to end?\nEx: 1986-07-27\n')
-            print("\n")
+            end = input('\nWhat date would you like to end?\nEx: 1986-07-27\n')
             if self.is_valid_date(end):
                 break
 
@@ -125,6 +131,6 @@ Please enter 1-3:
             dt.strptime(date_str, format)
             valid = True
         except ValueError:
-            print("ERROR!\nThis is the incorrect date string format. It should be YYYY-MM-DD.")
+            print("ERROR!\nThis is the incorrect date string format. It should be YYYY-MM-DD.\n")
 
         return valid

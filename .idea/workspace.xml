@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b1b28d-bbd7-4eb1-b4aa-c8bf1fc428ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/options.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analyze/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrape/qaqc.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape/qaqc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options.db" beforeDir="false" afterPath="$PROJECT_DIR$/options.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,20 +242,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640923751494</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Added closing of driver and db connection">
-      <created>1642101845960</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1642101845960</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Added get_expiries function">
-      <created>1642101868829</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1642101868829</updated>
     </task>
     <task id="LOCAL-00036" summary="No change">
       <created>1642132373334</created>
@@ -585,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642604173519</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Creating CLI">
+      <created>1642773922442</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1642773922442</updated>
+    </task>
+    <task id="LOCAL-00084" summary="CLI function with validation of dates and confirmation for scrape">
+      <created>1642863012959</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1642863012961</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -601,8 +602,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Checked scrape" />
-    <MESSAGE value="Reordered weekday and expiry functions" />
     <MESSAGE value="Added check to ensure end is after start" />
     <MESSAGE value="Scrape start='2021-01-04', end='2021-01-08'" />
     <MESSAGE value="Fixed a break that was resulting in ending after a Friday" />
@@ -626,6 +625,8 @@
     <MESSAGE value="Adding onto scrape menu" />
     <MESSAGE value="Fixed import" />
     <MESSAGE value="Cleaned up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up" />
+    <MESSAGE value="Creating CLI" />
+    <MESSAGE value="CLI function with validation of dates and confirmation for scrape" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLI function with validation of dates and confirmation for scrape" />
   </component>
 </project>

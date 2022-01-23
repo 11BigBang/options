@@ -11,7 +11,7 @@ class Query:
         start_unix = time.mktime(dt.strptime(start, "%Y-%m-%d").timetuple())
         end_unix = time.mktime(dt.strptime(end, "%Y-%m-%d").timetuple())
 
-        self.c.execute("SELECT date, ? FROM gme WHERE date BETWEEN ? AND ?", (metric, start_unix, end_unix))
+        self.c.execute(f"SELECT date,{metric} FROM gme WHERE date BETWEEN {start_unix} AND {end_unix}")
         data = self.c.fetchall()
         self.conn.close()
 
